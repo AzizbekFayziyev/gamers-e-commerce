@@ -1,0 +1,169 @@
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$primary: #5900ff;
+$secondary: #FB2E86;
+$secondary-50: #FECEDE;
+$light: #FFFFFF;
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.active {
+  color: $secondary !important;
+}
+
+// Navbar
+.navbarSearch {
+  background: $light !important;
+}
+
+// Header
+.header {
+  transition: 0.5s all linear;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 55%;
+    top: 250px;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(180deg, rgba(227, 48, 48, 0.28) 0%, rgba(247, 112, 150, 0.0924) 100%);
+    border-radius: 50%;
+  }
+
+  img {
+    z-index: 1;
+    margin: 20px auto;
+    width: 550px;
+    height: 500px;
+    object-fit: contain;
+  }
+
+  &__content {
+    z-index: 1;
+    margin: 20px auto;
+  }
+
+  .controller {
+    cursor: pointer;
+    border: 1px solid $secondary;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    margin: 20px 10px;
+
+    &.active {
+      background: $secondary;
+    }
+  }
+}
+
+// Home
+.productCard {
+  border-color: $secondary-50 !important;
+
+  img {
+    margin: 0 auto;
+    object-fit: contain;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+// Products 
+.product {
+  margin: auto;
+
+  img {
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: contain;
+  }
+}
+
+// Selected product
+.selectedProduct {
+  &__img {
+    object-fit: contain;
+    max-width: 450px;
+    max-height: 450px;
+  }
+
+  &__slider {
+    position: relative;
+
+    .arrowLeft {
+      position: absolute;
+      left: 0;
+    }
+
+    .arrowRight {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  &__subImage {
+    z-index: 1;
+    cursor: pointer;
+    object-fit: contain;
+    margin: 0 5px;
+    margin-top: -20px;
+    margin-bottom: 8px;
+    border: 1px solid gray;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.productInfo {
+  background: $secondary-50;
+}
+
+// Footer
+.footerInput {
+  input {
+    color: $light !important;
+  }
+
+  label {
+    color: $light;
+  }
+
+  fieldset {
+    border-color: $light;
+  }
+}
+
+// Media
+@media(max-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+
+  .header {
+    img {
+      margin: 0 auto;
+      max-width: 300px;
+      height: 300px;
+    }
+
+    &::before {
+      top: 10%;
+      left: 10%;
+    }
+
+    &__content {
+      margin: 5px auto;
+      text-align: center;
+    }
+  }
+}
